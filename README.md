@@ -12,11 +12,21 @@ It's assuming the case of coding program.
 - Full Space
 - ... and so on (future)
 
-## Release Notes
+## How to use ?
 
-Users appreciate release notes as you update your extension.
+Use on Commandline (Ctrl + Shift + P).
+
+### Command List
+
+- `Inspect Evils`
+
+Inspect evil charactors and alert result.
+
+
+## Release Notes
 
 ### 0.1.0
 
+It's my first publishing VSCode Extension!!!! wow!!!!
 Feature not reach to I need.
 
