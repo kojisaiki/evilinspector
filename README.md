@@ -29,4 +29,5 @@ Inspect evil charactors and alert result.
 
 It's my first publishing VSCode Extension!!!! wow!!!!
 Feature not reach to I need.
+(0.1.1 is update test...)
 
