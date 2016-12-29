@@ -9,41 +9,34 @@ export function activate(context: vscode.ExtensionContext) {
         inspect();
     });
     let cmdSearchEvil = vscode.commands.registerCommand('extension.searchevil', () => {
-        inspect();
+        growl();
     });
+
+    context.subscriptions.push(cmdInspect);
+    context.subscriptions.push(cmdSearchEvil);
         
     // Also trigger an update on changing the editor
     vscode.window.onDidChangeActiveTextEditor(editor => {
-        inspect();
+        decorate();
     }, null, context.subscriptions);
     
     // And when modifying the document
     vscode.workspace.onDidChangeTextDocument(event => {
-        inspect();
+        decorate();
     }, null, context.subscriptions);
 
-    context.subscriptions.push(cmdInspect);
-    context.subscriptions.push(cmdSearchEvil);
+    decorate();
 
-    function inspect() {
+
+    // functions
+
+    function decorate() {
         var editor = vscode.window.activeTextEditor;
+        var src : string = editor.document.getText();
         
+        vscode.window.setStatusBarMessage('');
         if (decChars != undefined) {
             decChars.decorator.dispose();
-        }
-
-        var src : string;
-        src = editor.document.getText();
-
-        var cnt = 0;
-        var ofs = 0;
-        var len = src.length;
-        while(true) {
-            ofs = src.indexOf("　", ofs + 1);
-            if (ofs < 0) {
-                break;
-            }
-            cnt++;
         }
 
         var regex = new RegExp('　', 'gm');
@@ -72,6 +65,40 @@ export function activate(context: vscode.ExtensionContext) {
         }
 
         editor.setDecorations(decChars.decorator, decChars.chars);
+    }
+
+    function inspect() {
+        if (decChars == undefined) {
+            return;
+        }
+
+        var editor = vscode.window.activeTextEditor;
+        var nowPosition = editor.selection.active;
+
+        var targetRange : vscode.Range = null;
+        for(var i in decChars.chars) {
+            if (nowPosition.compareTo(decChars.chars[i].start) <= 0) {
+                targetRange = decChars.chars[i];
+                break;
+            }
+        }
+        if (targetRange == null) {
+            targetRange = decChars.chars[0];
+        }
+
+        moveto(editor, targetRange);
+    }
+
+    function moveto(editor: vscode.TextEditor, targetRange: vscode.Range) {
+        editor.revealRange(targetRange); // texteditor scroll
+        editor.selection = new vscode.Selection(targetRange.start, targetRange.end); // move cursor
+    }
+
+    function growl() {
+        if (decChars == undefined) {
+            return;
+        }
+        vscode.window.setStatusBarMessage(decChars.chars.length + ' evils! growl!');
     }
 }
 
