@@ -10,6 +10,8 @@
     "categories": [
         "Other"
     ],
+    "license": "SEE LICENSE IN LICENSE.txt",
+    "icon": "images/icon.svg",
     "activationEvents": [
         "*"
     ],
