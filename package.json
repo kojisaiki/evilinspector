@@ -2,7 +2,7 @@
     "name": "evilinspector",
     "displayName": "EvilInspector",
     "description": "inspect evil charactors on your code",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "publisher": "saikou9901",
     "engines": {
         "vscode": "^1.5.0"
@@ -11,7 +11,7 @@
         "Other"
     ],
     "license": "SEE LICENSE IN LICENSE.txt",
-    "icon": "images/icon.svg",
+    "icon": "images/icon.png",
     "activationEvents": [
         "*"
     ],
