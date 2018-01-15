@@ -1,5 +1,40 @@
 # evilinspector README
 
+コード上の悪い文字を発見します。
+
+# 悪い文字？
+
+- 全角スペース
+
+以上だ！
+
+# 使いかた
+
+この拡張をインストールするだけで、悪い文字が強調表示されます。
+
+# コマンドライン機能
+
+- `Inspect Evils`
+
+カーソル位置から次に発見できる悪い文字を検索します。
+
+- `Let's Search Evil!`
+
+ステータスバー上に悪い文字の数をカウントして表示します。
+
+## Github
+
+https://github.com/kojisaiki/evilinspector
+
+## リリースノート
+
+### 1.0.0
+
+- ハイライト機能作成
+- コマンドライン機能作成
+
+---
+
 Inspect evil charactors on your code.
 
 ## Features
@@ -37,9 +72,3 @@ https://github.com/kojisaiki/evilinspector
 
 - Colored evil charactors in activeeditor.
 - Update commandline action.
-
-### 0.2.1
-
-It's my first publishing VSCode Extension!!!! wow!!!!
-Feature not reach to I need.
-
