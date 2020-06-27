@@ -1,5 +1,7 @@
 # evilinspector README
 
+## 概要
+
 コード上の悪い文字を発見します。
 
 # 悪い文字？
@@ -26,14 +28,9 @@
 
 https://github.com/kojisaiki/evilinspector
 
-## リリースノート
-
-### 1.0.0
-
-- ハイライト機能作成
-- コマンドライン機能作成
-
 ---
+
+## About
 
 Inspect evil charactors on your code.
 
@@ -61,14 +58,3 @@ Jump to next evil chars after cursor position.
 - `Let's Search Evil!`
 
 Show number of evil chars to status bar.
-
-## Github
-
-https://github.com/kojisaiki/evilinspector
-
-## Release Notes
-
-### 1.0.0
-
-- Colored evil charactors in activeeditor.
-- Update commandline action.
