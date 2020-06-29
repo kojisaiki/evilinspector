@@ -24,10 +24,6 @@
 
 ステータスバー上に悪い文字の数をカウントして表示します。
 
-## Github
-
-https://github.com/kojisaiki/evilinspector
-
 ---
 
 ## About
