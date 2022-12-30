@@ -42,7 +42,7 @@
         "@types/mocha": "^7.0.2",
         "@types/node": "^14.0.14",
         "@types/vscode": "^1.14.0",
-        "mocha": "^8.0.1",
+        "mocha": "^8.4.0",
         "typescript": "^3.9.5",
         "vsce": "^1.77.0",
         "vscode-test": "^1.4.0"
